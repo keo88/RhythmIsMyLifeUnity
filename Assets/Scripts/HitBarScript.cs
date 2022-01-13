@@ -19,11 +19,16 @@ public class HitBarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(HitKey)) 
+
+    }
+
+    public void UpdateHitBar()
+    {
+        if (Input.GetKeyDown(HitKey))
         {
             renderer.material.SetColor("_Color", ColorClicked);
         }
-        else if (Input.GetKeyUp(HitKey)) 
+        else if (Input.GetKeyUp(HitKey))
         {
             renderer.material.SetColor("_Color", ColorDefault);
         }

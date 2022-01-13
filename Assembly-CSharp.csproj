@@ -53,9 +53,7 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PythonManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\python_manager.cs" />
     <Compile Include="Assets\Scripts\BeatScroller.cs" />
     <Compile Include="Assets\Scripts\NoteScript.cs" />
     <Compile Include="Assets\Scripts\HitBarScript.cs" />
@@ -658,10 +656,6 @@
       <Project>{EBA10FCC-CEA0-BEF8-4870-7C70172C1491}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Scripting.Python.Editor.csproj">
-      <Project>{CBDA074A-8076-B378-4300-1307E12DC750}</Project>
-      <Name>Unity.Scripting.Python.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{E3E7165C-10FA-C9F0-009B-643D7B963A23}</Project>
       <Name>UnityEditor.UI</Name>
@@ -677,10 +671,6 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{17723C4A-2884-C84E-2609-066330F1ED9F}</Project>
       <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Scripting.Python.Editor.PlatformCheck.csproj">
-      <Project>{16BBE480-94BC-1D19-1849-C23C4836FFA7}</Project>
-      <Name>Unity.Scripting.Python.Editor.PlatformCheck</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

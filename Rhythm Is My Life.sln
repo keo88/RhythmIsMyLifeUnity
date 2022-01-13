@@ -31,10 +31,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Rider.Editor", "Unity
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VSCode.Editor", "Unity.VSCode.Editor.csproj", "{B0A2D1BB-5F66-0D70-1838-93AD9D66B755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Scripting.Python.Editor", "Unity.Scripting.Python.Editor.csproj", "{CBDA074A-8076-B378-4300-1307E12DC750}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Scripting.Python.Editor.PlatformCheck", "Unity.Scripting.Python.Editor.PlatformCheck.csproj", "{16BBE480-94BC-1D19-1849-C23C4836FFA7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.Player.csproj", "{68651042-E049-2FAD-7AC1-1B7744320BA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline", "Unity.Timeline.Player.csproj", "{DCA308EE-9525-96DD-A38C-058CC00E9159}"
@@ -111,14 +107,6 @@ Global
 		{B0A2D1BB-5F66-0D70-1838-93AD9D66B755}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0A2D1BB-5F66-0D70-1838-93AD9D66B755}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0A2D1BB-5F66-0D70-1838-93AD9D66B755}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBDA074A-8076-B378-4300-1307E12DC750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBDA074A-8076-B378-4300-1307E12DC750}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBDA074A-8076-B378-4300-1307E12DC750}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBDA074A-8076-B378-4300-1307E12DC750}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16BBE480-94BC-1D19-1849-C23C4836FFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16BBE480-94BC-1D19-1849-C23C4836FFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16BBE480-94BC-1D19-1849-C23C4836FFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16BBE480-94BC-1D19-1849-C23C4836FFA7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{68651042-E049-2FAD-7AC1-1B7744320BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68651042-E049-2FAD-7AC1-1B7744320BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68651042-E049-2FAD-7AC1-1B7744320BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU

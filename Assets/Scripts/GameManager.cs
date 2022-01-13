@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public bool IsPlaying;
     public BeatScroller BS;
     public PythonLibrosaManager PM;
+    public HitBarScript HS;
 
     private bool has_clicked;
 
@@ -37,5 +38,8 @@ public class GameManager : MonoBehaviour
 
             Track.Play();
         }
+
+        BS.UpdateBeatScroller();
+        HS.UpdateHitBar();
     }
 }

@@ -43,6 +43,11 @@ public class BeatScroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    public void UpdateBeatScroller()
+    {
         if (Input.GetKeyDown(SwitchLaneLeftKey))
         {
             CurrentLane = AvailableLanes[(AvailableLanes.IndexOf(CurrentLane) + AvailableLanes.Count - 1) % AvailableLanes.Count];
@@ -63,7 +68,7 @@ public class BeatScroller : MonoBehaviour
             transform.position += new Vector3(0f, 0f, 0.1f * Speed);
         }
 
-            if (StartFlag) 
+        if (StartFlag)
         {
             transform.position += new Vector3((target_lane_position_x - transform.position.x) * 0.1f, 0f, -Tempo * Time.deltaTime * Speed);
         }

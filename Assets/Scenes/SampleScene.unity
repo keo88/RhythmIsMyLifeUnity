@@ -225,7 +225,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 768356924}
-  - component: {fileID: 768356923}
   - component: {fileID: 768356925}
   m_Layer: 0
   m_Name: PythonManager
@@ -234,23 +233,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &768356923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768356922}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d90c6741a0c8bea4cb31eabd6d571322, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectionIP: 127.0.0.1
-  connectionPort: 9999
-  MusicFilePath: Assets/MusicSample/Canon.wav
-  Tempo: 0
-  TempoIsAnalyzed: 0
 --- !u!4 &768356924
 Transform:
   m_ObjectHideFlags: 0
@@ -803,6 +785,7 @@ MonoBehaviour:
   IsPlaying: 0
   BS: {fileID: 973135786}
   PM: {fileID: 768356925}
+  HS: {fileID: 1091674636}
 --- !u!4 &1766046784
 Transform:
   m_ObjectHideFlags: 0
