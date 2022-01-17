@@ -522,12 +522,14 @@ MonoBehaviour:
   SwitchLaneRightKey: 100
   DebugLaneSyncForwardKey: 119
   DebugLaneSyncBackwardKey: 115
+  Note: {fileID: 2161667161231672559, guid: 64f471a7ba556574d9d7c238aff96583, type: 3}
   Speed: 1
+  SpawnNoteMusicDistance: 8
+  SpawnCheckInterval: 1
   Tempo: 0
   StartFlag: 0
   CurrentLane: 0
-  Note: {fileID: 2161667161231672559, guid: 64f471a7ba556574d9d7c238aff96583, type: 3}
-  AvailableLanes: 
+  CurrentMusicDistance: 0
 --- !u!1 &1091674635
 GameObject:
   m_ObjectHideFlags: 0
