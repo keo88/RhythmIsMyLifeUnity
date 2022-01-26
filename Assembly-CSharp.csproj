@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8586E835-B43C-B662-0A51-EF5FED089449}</ProjectGuid>
+    <ProjectGuid>{BC6BA59E-C2F5-03E0-03BD-2026F6884C98}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -57,621 +57,1044 @@
     <Compile Include="Assets\Scripts\BeatScroller.cs" />
     <Compile Include="Assets\Scripts\NoteScript.cs" />
     <Compile Include="Assets\Scripts\HitBarScript.cs" />
-    <Compile Include="Assets\Scripts\PythonLibrosaManager.cs" />
+    <Compile Include="Assets\Scripts\PythonManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\45c-RepeatMultipleTimes.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\52a-PageLayout.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_9-Gloria Clementiae Pax.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\sklearn\datasets\tests\data\svmlight_invalid.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06-Jacopo-03a-Di_Novo.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\12b-Clefs-NoKeyOrClef.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61h-Lyrics-BeamsMelismata.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\03d-Rhythm-DottedDurations-Factors.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61g-Lyrics-NameNumber.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\webcolors-1.11.1.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\doc_requirements.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\urllib3-1.26.8.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\32d-Arpeggio.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\41a-MultiParts-Partorder.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\librosa-0.8.1.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-cosine-ml-iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_9-Gloria Ciconia 9.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-euclidean-ml-iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\24a-GraceNotes.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\99a-Sibelius5-IgnoreBeaming.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\joblib-1.1.0.dist-info\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_5-Gloria Ciconia 5 Spiritus et alme.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\llvmlite\binding\llvmlite.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_2-Credo Ciconia 2.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\21d-Chords-SchubertStabatMater.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_15b-Kyrie Humano Generi b.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_18-Kyrie Chipre.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\setuptools-60.5.0.dist-info\entry_points.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pip-21.3.1.dist-info\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-minkowski-5.8-ml-iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\Fava_Dicant_nunc_iudei.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_14-Gloria.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\languageExcerpts\trainingData\nl.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\24e-GraceNote-StaffChange.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Giovanni-02-Apress_un_fiume_a.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\essenFolksong\license.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\21f-Chord-ElementInBetween.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numpy\core\tests\data\umath-validation-set-README.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_13-Gloria.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_10a-Credo PMFC12.10a.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06-Jacopo-02-Con-Gran-Furor.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\PIL\msvcp140_1.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\46f-IncompleteMeasures.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\23f-Tuplets-DurationButNoBracket.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\11f-TimeSignatures-SymbolMeaning.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_15-Sanctus Lorenzo.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Giovanni-09_Nascoso_El_Viso.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\99d-AccordionInvalid.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\testTrillOnOneNote.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\41d-StaffGroups-Nested.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_4-Credo Ciconia 4.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\more_itertools-8.12.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\random-uint-data.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_7-Gloria Egardus.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\qhull_src\COPYING.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\audioread-2.1.9-py3.8.egg-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy-1.7.3.dist-info\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_16-Gloria.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\fonttools-4.28.5.dist-info\entry_points.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\72c-TransposingInstruments-Change.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\33a-Spanners.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Giovanni-05_Donna_Gia_Fu_Leggiadra.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\11h-TimeSignatures-SenzaMisura.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_22-Kyrie Summe Clementissime.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\01a-Pitches-Pitches.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\mypy_requirements.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\01ea-Pitches-Parenthesis-Changed-Accidentals.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\demos\two-parts.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\45b-RepeatWithAlternatives.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\languageExcerpts\trainingData\cn.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\46c-Midmeasure-Clef.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\32a-Notations.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\_soundfile_data\libsndfile32bit.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_12-Gloria.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\41b-MultiParts-MoreThan10.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\PIL\vcruntime140.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_26-Kyrie O Virgo Sacrata Maria.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_05-Gloria Rosetta.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pyparsing-3.0.7.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\51c-MultipleRights.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\72a-TransposingInstruments.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-minkowski-3.2-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Piero_6a-Quando_laire_comenca.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\omr\k525GTshort.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\scale\scala\scl\license.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_03-Gloria Micinella.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy-1.7.3.dist-info\LICENSES_bundled.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_20-Padu... serenans.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\python_dateutil-2.8.2.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\22a-Noteheads.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\42a-MultiVoice-TwoVoicesOnStaff-Lyrics.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch\tests\data\registry-custom-url.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_11a-Credo PMFC12.11a.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\46b-MidmeasureBarline.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\11a-TimeSignatures.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pip-21.3.1.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\PIL\msvcp140_2.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06-Jacopo-01-Aquila-Altera.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\74a-FiguredBass.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_5-Gloria PMFC 12.5.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\PIL\vcruntime140_1.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\PIL\msvcp140_atomic_wait.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\41c-StaffGroups.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21-7.1.0-py3.8.egg-info\dependency_links.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61k-Lyrics-SpannersExtenders.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\random-int-data.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_19-Kyrie Perrinet.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_4-Gloria Rvat 1419_bak.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\03ab-Rhythm-Durations.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\fonttools-4.28.5.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\cdist-X1.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_07-Gloria Laus Honor.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_21-O proles hispanie.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\selfdual-4d-polytope.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\audioread-2.1.9-py3.8.egg-info\installed-files.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-cityblock-ml-iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\decorator-5.1.1.dist-info\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-jensenshannon-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\demos\voices_with_chords.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\testChordOffset.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-hamming-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\23c-Tuplet-Display-NonStandard.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-cosine-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\03b-Rhythm-Backup.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pip\_vendor\vendor.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\23d-Tuplets-Nested.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\librosa\util\example_data\registry.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_19-Credo Scabroso.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\13b-KeySignatures-ChurchModes.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\13a-KeySignatures.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\32ab-Notations3.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\02b-Rests-PitchedRests.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\matplotlib\mpl-data\fonts\pdfcorefonts\readme.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\ndimage\tests\data\label_results.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_10b-Credo PMFC12.10b.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_01-Rex quem metrorum.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\languageExcerpts\trainingData\de.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\46d-PickupMeasure-ImplicitMeasures.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\71e-TabStaves.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch\tests\data\tiny-data.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\bach\bwv69.6.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\packaging-21.3.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_21-Kyrie Guymont.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_01-Kyrie-Summe-Clementissime.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\charset_normalizer-2.0.10.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\71c-ChordsFrets.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\demos\layoutTestMore.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\41h-TooManyParts.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\71f-AllChordTypes.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\ndimage\tests\data\README.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\43a-PianoStaff.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\demos\nested_tuplet_finale_test2.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numpy\core\include\numpy\multiarray_api.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Piero_2-Chavalcando.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\resampy-0.2.2-py3.8.egg-info\installed-files.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-correlation-ml-iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\46e-PickupMeasure-SecondVoiceStartsLater.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\appdirs-1.4.4.dist-info\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\PIL\msvcp140.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\14a-StaffDetails-LineChanges.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\chardet-4.0.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\sklearn\datasets\tests\data\svmlight_multilabel.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\03c-Rhythm-DivisionChange.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\01d-Pitches-Microtones.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_08-Gloria (Ad Ongni Vento).xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\33c-Spanners-Slurs.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\24b-ChordAsGraceNote.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\12ab-Clefs-Percussion-NonTrad.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_01-Virtutibus laudabilis.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\HACKING.rst.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numba-0.55.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\resampy-0.2.2-py3.8.egg-info\SOURCES.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\43b-MultiStaff-DifferentKeys.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\13c-KeySignatures-NonTraditional.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\figuredBass\demo.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\41e-StaffGroups-InstrumentNames-Linebroken.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\24d-AfterGrace.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_11-Credo Ciconia 11.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch\tests\data\registry.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\ndimage\tests\data\label_strels.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_01-Vos Qui Admiramini Gratissima virginis species.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\schumann\opus41no1\movement4.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\matplotlib-3.5.1.dist-info\namespace_packages.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_6-Gloria Ciconia 6 Spiritus et alme.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch-1.5.2.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\idna-3.3.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\41g-PartNoId.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\02a-Rests-Durations.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\21b-Chords-TwoNotes.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\22c-Noteheads-Chords.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-chebyshev-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\32b-Articulations-Texts.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\license.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_16-Kyrie Apt 16.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_14-Credo Phillippoctus.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\PIL\concrt140.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\71a-Chordnames.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Giovanni-04_De_Come_Dolce_Mente.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61d-Lyrics-Melisma.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-minkowski-3.2-ml-iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\setuptools\command\launcher manifest.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\demos\two-voices.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\46a-Barlines.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\01f-Pitches-EditorialMicrotoneAccidentals.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_18-Sanctus Mediolano.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\charset_normalizer-2.0.10.dist-info\entry_points.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\ndimage\tests\data\label_inputs.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_23-Kyrie Rex Inmense Maiestasis.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\22d-Parenthesized-Noteheads.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61i-Lyrics-Chords.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scikit_learn-1.0.2.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\corelli\opus3no1\1grave.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\chardet-4.0.0.dist-info\entry_points.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\31c-MetronomeMarks.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-jensenshannon-ml-iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\33g-Slur-ChordedNotes.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\languageExcerpts\trainingData\la.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_3-Gloria Gherardello.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-chebyshev-ml-iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\13ab-KeySignatures-Cancel.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-double-inp.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61j-Lyrics-Elisions.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\46g-PickupMeasure-Chordnames-FiguredBass.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\12ad-Clefs-Extreme-Octave.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\43d-MultiStaff-StaffChange.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\io\matlab\tests\data\japanese_utf8.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_3-Gloria Ciconia 3.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\43c-MultiStaff-DifferentKeysAfterBackup.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\23e-Tuplets-Tremolo.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_20-Agnus Dei Gherardello.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_10-Credo Ciconia 10.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\03aa-Rhythm-Durations.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_22-Benedicamus PMFC12.22.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\02d-Rests-Multimeasure-TimeSignatures.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61l-Lyrics-Elisions-Syllables.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\45e-Repeats-Nested-Alternatives.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numpy\core\include\numpy\ufunc_api.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\omr\k525OMRMvt1.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\random-bool-data.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\12ac-Clefs-TAB-Switch.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numpy-1.21.5.dist-info\LICENSES_bundled.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21-7.1.0-py3.8.egg-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\21e-Chords-PickupMeasures.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\license.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-spearman-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\joblib-1.1.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\33b-Spanners-Tie.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61e-Lyrics-Chords.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_7-Gloria Suscipe, trinitas.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\omr\k525OMRshort.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_01-Lugentium siccentur.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_15-Gloria.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\11b-TimeSignatures-NoTime.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\32ac-Notations4.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\33h-Spanners-Glissando.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\kiwisolver-1.3.2.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\languageExcerpts\trainingData\it.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_19-Sanctus Barbitonsoris.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\PIL\msvcp140_codecvt_ids.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\13d-KeySignatures-Microtones.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_19-Ut te per omnes celitus- Ingens alumnus padue.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\72b-TransposingInstruments-Full.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pycparser-2.21.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_17-Gloria Spiritus et Alme.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\42b-MultiVoice-MidMeasureClefChange.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\43e-Multistaff-ClefDynamics.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\32c-MultipleNotationChildren.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\01e-Pitches-EditorialCautionaryAccidentals.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\demos\layoutTest.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\sklearn\datasets\tests\data\svmlight_classification.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-correlation-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\45a-SimpleRepeat.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numpy\core\include\numpy\libdivide\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21-7.1.0-py3.8.egg-info\SOURCES.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\cffi-1.15.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\cdist-X2.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\testTab.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61b-MultipleLyrics.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_09-Gloria Anglicana.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\45d-Repeats-Nested-Alternatives.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\requests-2.27.1.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\11e-TimeSignatures-CompoundMixed.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\01c-Pitches-NoVoiceElement.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_15-O virum omnimoda.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch\tests\data\store\tiny-data.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\71g-MultipleChordnames.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\LICENSES_bundled.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pip-21.3.1.dist-info\entry_points.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_22-O beatum incendium.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\urllib3-1.26.8.dist-info\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\31a-Directions.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\audioread-2.1.9-py3.8.egg-info\dependency_links.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numpy\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\PIL\vccorlib140.dll" />
+    <None Include="Assets\Python\venv\Lib\site-packages\SoundFile-0.10.3.post1.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\99c-Wavy-Lines-No-Numbers.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\24c-GraceNote-MeasureEnd.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\75a-AccordionRegistrations.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_04-Cara mi donna.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_8-Gloria Ciconia 8.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Giovanni-06_Fra_Mille_Corvi.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\23b-Tuplets-Styles.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_1-Kyrie Rondello.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21-7.1.0-py3.8.egg-info\requires.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numpy-1.21.5.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\11c-TimeSignatures-CompoundSimple.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\cffi-1.15.0.dist-info\entry_points.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\testNC.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\02c-Rests-MultiMeasureRests.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\13aa-KeySignatures-Extreme.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\11g-TimeSignatures-SingleNumber.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\02e-Rests-NoType.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_24-Benedicamus.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_12-Credo Bartholus.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\33d-Spanners-OctaveShifts.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_8-Gloria London 29987.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\audioread-2.1.9-py3.8.egg-info\SOURCES.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61f-Lyrics-GracedNotes.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\ciconia\quod_jactatur.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\demos\nested_tuplet_finale_test.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\22b-Staff-Notestyles.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_6-Gloria Gratiosus.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\24f-GraceNote-Slur.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\01b-Pitches-Intervals.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch\tests\data\large-data.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\12aa-Clefs_Pitch_Traditional.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-seuclidean-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\languageExcerpts\trainingData\fr.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_1-Gloria Ciconia 1.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\resampy-0.2.2-py3.8.egg-info\dependency_links.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\13e-KeySignatures-MidMeasure-Change.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21-7.1.0-py3.8.egg-info\installed-files.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\matplotlib\mpl-data\sample_data\README.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\schumann_clara\opus17\movement3.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61c-Lyrics-Pianostaff.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\matplotlib-3.5.1.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\omr\k525GTMvt1.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\luca\gloria.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_04-A lle s_andra lo spirt.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\61a-Lyrics.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Piero_1-All_onbra d_un perlato.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_04-Quanto piu caro.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\INSTALL.rst.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\certifi-2021.10.8.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_17-Kyrie Principum Effectivum.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-euclidean-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\decorator-5.1.1.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\six-1.16.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_11b-Credo PMFC12.11b.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\73a-Percussion.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\jsonpickle-2.1.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy-1.7.3.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\33i-Ties-NotEnded.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch\tests\data\registry-invalid.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch-1.5.2.dist-info\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\appdirs-1.4.4.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\71d-ChordsFrets-Multistaff.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\13ac-KeySignatures-Octaves.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\21c-Chords-ThreeNotesDuration.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\stream\tripletOffsetBugtest.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\schumann\dichterliebe_no2.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_10-I senti gia come l_arco.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\converter\incorrectExtension.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_4-Gloria Rvat 1419.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\33e-Spanners-OctaveShifts-InvalidSize.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_25-Kyrie Barcelona 853.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\33f-Trill-EndingOnGraceNote.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\23a-Tuplets.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\fontTools\ttLib\tables\table_API_readme.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Giovanni-03-Chon_brachi_assai.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_13-Credo London f83-85.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_21-Benedicamus PMFC12.21.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\llvmlite-0.38.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\resampy-0.2.2-py3.8.egg-info\requires.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\cycler-0.11.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_18-Gloria Spiritus et Alme.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\11d-TimeSignatures-CompoundMultiple.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\bach\bwv67.4.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\schubert\Lindenbaum.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_04-Credo Cursor.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_15a-Kyrie Humano Generi a.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Giovanni-01-Angnel_son_biancho.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch\tests\data\registry_comments.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_16-Albane misse celitus.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-boolean-inp.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\21a-Chord-Basic.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\demos\multiple-verses.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numpy-1.21.5.dist-info\entry_points.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_8-In Verde Prato.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\random-double-data.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\99b-Lyrics-BeamsMelismata-IgnoreBeams.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_16-Sanctus PMFC12.16.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\pooch\tests\data\store\subdir\tiny-data.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\32aa-Notations2_Ornaments.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\41i-PartNameDisplay-Override.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\45f-Repeats-InvalidEndings.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_06-Gloria Fior Gentil.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_13_10-Gloria.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_24-Kyrie Ave Desiderii.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_24_17-Doctorum principem-Melodia suavissima-Vir mitis.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_23-Benedicamus PMFC12.23.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-seuclidean-ml-iris.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\51d-EmptyTitle.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_17-Sanctus Gratiosus.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\51b-Header-Quotes.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\45g-Repeats-NotEnded.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-jaccard-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\sparse\linalg\dsolve\SuperLU\License.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\setuptools-60.5.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\numpy-1.21.5.dist-info\LICENSE.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\scipy\spatial\tests\data\pdist-cityblock-ml.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\sklearn\datasets\images\README.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06_Giovanni-07_In_Sulla_Ripa.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\Pillow-9.0.0.dist-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_23_20-Kyrie O Sacra Virgo Beata.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\52b-Breaks.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_06-Jacopo-03b-Di_Novo.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_12_2-Gloria (Gubbio).xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\sklearn\datasets\tests\data\svmlight_invalid_order.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\corpus\trecento\PMFC_04-Si dolce non sono.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\resampy-0.2.2-py3.8.egg-info\top_level.txt" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\musicxml\lilypondTestSuite\41f-StaffGroups-Overlapping.xml" />
+    <None Include="Assets\Python\venv\Lib\site-packages\music21\languageExcerpts\trainingData\en.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ARModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AccessibilityModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AndroidJNIModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterInputModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CrashReportingModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DSPGraphModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GIModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GameCenterModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GridModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HotReloadModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.LocalizationModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PerformanceReportingModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ProfilerModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteShapeModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StreamingModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SubstanceModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SubsystemsModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TLSModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextCoreModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsNativeModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UNETModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UNETModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UNETModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UmbraModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityAnalyticsModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityConnectModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityCurlModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityTestProtocolModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VFXModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VRModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VehiclesModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VideoModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VirtualTexturingModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WindModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XRModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.CoreModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.GraphViewModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.PackageManagerUIModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.PackageManagerUIModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.PackageManagerUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SceneTemplateModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UIElementsModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UIElementsSamplesModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UIServiceModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIServiceModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIServiceModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Primitives">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\Microsoft.Win32.Primitives.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.AppContext">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.AppContext.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.AppContext.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Concurrent">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.Concurrent.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.Concurrent.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.NonGeneric">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.NonGeneric.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.NonGeneric.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Specialized">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.Specialized.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Collections.Specialized.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.EventBasedAsync">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.EventBasedAsync.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.EventBasedAsync.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Primitives">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.Primitives.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.TypeConverter">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.TypeConverter.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ComponentModel.TypeConverter.dll</HintPath>
     </Reference>
     <Reference Include="System.Console">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Console.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Console.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Common">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Data.Common.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Data.Common.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Contracts">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Contracts.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Debug">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Debug.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Debug.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.FileVersionInfo">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.FileVersionInfo.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Process">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Process.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Process.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.StackTrace">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.StackTrace.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.StackTrace.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.TextWriterTraceListener">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tools">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Tools.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Tools.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.TraceSource">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.TraceSource.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.TraceSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tracing">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Tracing.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Diagnostics.Tracing.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing.Primitives">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Drawing.Primitives.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Drawing.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Dynamic.Runtime">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Dynamic.Runtime.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Dynamic.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization.Calendars">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Globalization.Calendars.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Globalization.Calendars.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Globalization.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Globalization.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization.Extensions">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Globalization.Extensions.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Globalization.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.Compression.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.Compression.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression.ZipFile">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.Compression.ZipFile.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.Compression.ZipFile.dll</HintPath>
     </Reference>
     <Reference Include="System.IO">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.DriveInfo">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.DriveInfo.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.DriveInfo.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.Primitives">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.Primitives.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.Watcher">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.Watcher.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.FileSystem.Watcher.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.IsolatedStorage">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.IsolatedStorage.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.IsolatedStorage.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.MemoryMappedFiles">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.MemoryMappedFiles.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.MemoryMappedFiles.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Pipes">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.Pipes.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.Pipes.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.UnmanagedMemoryStream">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.IO.UnmanagedMemoryStream.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Expressions">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.Expressions.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.Expressions.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Parallel">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.Parallel.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.Parallel.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Queryable">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.Queryable.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Linq.Queryable.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Http.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.NameResolution">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.NameResolution.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.NameResolution.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.NetworkInformation">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.NetworkInformation.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.NetworkInformation.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Ping">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Ping.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Ping.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Primitives">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Primitives.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Requests">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Requests.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Requests.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Security">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Security.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Security.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Sockets">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Sockets.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.Sockets.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.WebHeaderCollection">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.WebHeaderCollection.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.WebHeaderCollection.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.WebSockets.Client">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.WebSockets.Client.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.WebSockets.Client.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.WebSockets">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.WebSockets.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Net.WebSockets.dll</HintPath>
     </Reference>
     <Reference Include="System.ObjectModel">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ObjectModel.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Reflection.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Extensions">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Reflection.Extensions.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Reflection.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Primitives">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Reflection.Primitives.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Reflection.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.Reader">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Resources.Reader.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Resources.Reader.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.ResourceManager">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Resources.ResourceManager.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Resources.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.Writer">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Resources.Writer.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Resources.Writer.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.VisualC">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.CompilerServices.VisualC.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Extensions">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Extensions.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Handles">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Handles.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Handles.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.InteropServices.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.InteropServices.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Numerics">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Numerics.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Formatters">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Formatters.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Json">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Json.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Primitives">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Xml">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Xml.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Runtime.Serialization.Xml.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Claims">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Claims.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Claims.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Algorithms.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Csp">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Csp.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Csp.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Encoding">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Encoding.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Encoding.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Primitives">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Primitives.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.X509Certificates">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Principal">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Principal.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.Principal.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.SecureString">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.SecureString.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Security.SecureString.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.Encoding">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Text.Encoding.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Text.Encoding.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.Encoding.Extensions">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Text.Encoding.Extensions.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Text.Encoding.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.RegularExpressions">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Text.RegularExpressions.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Text.RegularExpressions.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Overlapped">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Overlapped.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Overlapped.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Tasks.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Parallel">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Tasks.Parallel.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Tasks.Parallel.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Thread">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Thread.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Thread.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.ThreadPool">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.ThreadPool.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.ThreadPool.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Timer">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Timer.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Threading.Timer.dll</HintPath>
     </Reference>
     <Reference Include="System.ValueTuple">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ValueTuple.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.ReaderWriter">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.ReaderWriter.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.ReaderWriter.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XDocument">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XDocument.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XmlDocument">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XmlDocument.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XmlDocument.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XmlSerializer">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XmlSerializer.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XmlSerializer.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XPath">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XPath.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XPath.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XPath.XDocument">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XPath.XDocument.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netstandard\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics.Vectors">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Numerics.Vectors.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\mscorlib.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.ComponentModel.Composition.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.ComponentModel.Composition.dll</HintPath>
     </Reference>
     <Reference Include="System.Core">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Core.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Data">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Data.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Data.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Drawing.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression.FileSystem">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.IO.Compression.FileSystem.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.IO.Compression.FileSystem.dll</HintPath>
     </Reference>
     <Reference Include="System.Net">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Net.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Net.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Numerics.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Runtime.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceModel.Web">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.ServiceModel.Web.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.ServiceModel.Web.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Transactions.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Transactions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Web.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Web.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Windows.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Linq.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Serialization">
-      <HintPath>E:\Programs\Unity\Unity Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Scripting.Python.Editor.PlatformCheck">
+      <HintPath>Library\ScriptAssemblies\Unity.Scripting.Python.Editor.PlatformCheck.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Scripting.Python.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Scripting.Python.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{B0A2D1BB-5F66-0D70-1838-93AD9D66B755}</Project>
-      <Name>Unity.VSCode.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{9C69D3F0-AD2B-80BD-9843-C50D011E07BD}</Project>
-      <Name>Unity.TextMeshPro.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
-      <Project>{0E54296D-FD3D-A24D-3AE7-944C17D008B7}</Project>
-      <Name>Unity.VisualStudio.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{68521A1F-0A50-7B40-EAE5-B5B4A403D5A5}</Project>
-      <Name>Unity.Timeline.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{B5706F76-5993-5C53-0119-619D9FD3EAF3}</Project>
-      <Name>Unity.Timeline</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{EBA10FCC-CEA0-BEF8-4870-7C70172C1491}</Project>
-      <Name>Unity.TextMeshPro</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{E3E7165C-10FA-C9F0-009B-643D7B963A23}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{34A6FE8A-789D-943E-0192-879FA95219A1}</Project>
-      <Name>Unity.PlasticSCM.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{FF5441DE-0524-61B4-43A1-226F7E358D3B}</Project>
-      <Name>Unity.Rider.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{17723C4A-2884-C84E-2609-066330F1ED9F}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

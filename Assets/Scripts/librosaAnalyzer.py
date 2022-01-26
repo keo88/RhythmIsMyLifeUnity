@@ -2,14 +2,24 @@ import socket
 import threading
 import librosa
 import time
+from music21 import *
+import os
 
+def open_midi(midi_path):
+    mf = midi.MidiFile()
+    mf.open(midi_path)
+    mf.read()
+    mf.close()
+
+    return midi.translate.midiFileToStream(mf)
 
 def binder(client_socket, addr):
     try:
         received_music_path = client_socket.recv(1024).decode("UTF-8")
         print(received_music_path)
+        # ue.Debug.Log(received_music_path)
         music_file = received_music_path
-
+        
         y, sr = librosa.load(music_file)
         tempo, beats = librosa.beat.beat_track(y, sr)
         tempo = str(tempo)
@@ -30,6 +40,9 @@ server_socket.bind(('127.0.0.1', 9999))
 server_socket.listen(30)
 
 print('server established on :')
+path = os.getcwd()
+print(path)
+
 
 while True:
     try:

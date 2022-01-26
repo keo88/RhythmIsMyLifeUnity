@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BeatScroller : MonoBehaviour
 {
+    public GameManager GM;
+
     public const int BARSIZE = 8;
     public int LANEGAP = 4;
 
@@ -16,7 +18,7 @@ public class BeatScroller : MonoBehaviour
     /// <summary>
     /// Tempo-indendent note falling speed.
     /// </summary>
-    public float Speed;
+    //public float Speed;
 
     /// <summary>
     ///  Defines how "far" the notes spawn from the current position, music distance-wise.
@@ -25,6 +27,7 @@ public class BeatScroller : MonoBehaviour
     public float SpawnCheckInterval;
 
     public float Tempo;
+    public float[] BeatArray;
     public bool StartFlag;
     public int CurrentLane;
 
@@ -45,8 +48,8 @@ public class BeatScroller : MonoBehaviour
     /// </summary>
     private List<int> lane_spawn_heads;
 
-    private float[] pattern1 = { 2f, 4f, 6f, 8f};
-    private float[] pattern2 = { 1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f};
+    private float[] pattern1 = { 2f, 4f, 6f, 8f };
+    private float[] pattern2 = { 1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f };
     private float[] pattern3 = { 1f, 1.5f, 2f, 3f, 3.5f, 4f, 4.5f, 5f, 5.5f, 6f, 6.5f, 7f, 7.5f, 8f };
 
     private int target_lane_position_x;
@@ -62,18 +65,21 @@ public class BeatScroller : MonoBehaviour
         lanes = new List<List<float>>();
         lane_spawn_heads = new List<int>();
 
-        CreateLane(pattern1, 10);
-        CreateLane(pattern2, 10);
-        CreateLane(pattern3, 10);
+        
 
         // gameObject.transform.localScale = new Vector3(1f, 1f, Speed);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
+    private void Update()
+    {
     }
+    public void CreateLanes()
+    {
+        CreateLane(BeatArray, 1);
+        CreateLane(pattern2, 1);
+        CreateLane(pattern3, 1);
+    }    
 
     public void UpdateBeatScroller()
     {
@@ -90,27 +96,26 @@ public class BeatScroller : MonoBehaviour
         }
         else if (Input.GetKeyDown(DebugLaneSyncForwardKey))
         {
-            transform.position -= new Vector3(0f, 0f, 0.1f * Speed);
+            transform.position -= new Vector3(0f, 0f, 0.1f * GM.Speed);
         }
         else if (Input.GetKeyDown(DebugLaneSyncBackwardKey))
         {
-            transform.position += new Vector3(0f, 0f, 0.1f * Speed);
+            transform.position += new Vector3(0f, 0f, 0.1f * GM.Speed);
         }
 
-        if (StartFlag)
+
+        transform.position += new Vector3((target_lane_position_x - transform.position.x) * 0.1f, 0f, -Tempo * Time.deltaTime * GM.Speed);
+
+        float delta_music_dist = Tempo * Time.deltaTime;
+        check_elapsed_music_dist += delta_music_dist;
+
+        if (check_elapsed_music_dist >= SpawnCheckInterval)
         {
-            transform.position += new Vector3((target_lane_position_x - transform.position.x) * 0.1f, 0f, -Tempo * Time.deltaTime * Speed);
-
-            float delta_music_dist = Tempo * Time.deltaTime;
-            check_elapsed_music_dist += delta_music_dist;
-
-            if (check_elapsed_music_dist >= SpawnCheckInterval)
-            {
-                CreateAdjacentNotes();
-                check_elapsed_music_dist -= SpawnCheckInterval;
-            }
-            CurrentMusicDistance += Tempo * Time.deltaTime;
+            CreateAdjacentNotes();
+            check_elapsed_music_dist -= SpawnCheckInterval;
         }
+        CurrentMusicDistance += Tempo * Time.deltaTime;
+        
     }
 
 
@@ -141,7 +146,7 @@ public class BeatScroller : MonoBehaviour
         {
             while (lane_spawn_heads[lane_index] < lanes[lane_index].Count && lanes[lane_index][lane_spawn_heads[lane_index]] <= spawn_cap)
             {
-                float spawn_note_z = (lanes[lane_index][lane_spawn_heads[lane_index]] - CurrentMusicDistance) * Speed;
+                float spawn_note_z = (lanes[lane_index][lane_spawn_heads[lane_index]] - CurrentMusicDistance) * GM.Speed;
                 GameObject note = Instantiate(Note, new Vector3(lane_index * LANEGAP + gameObject.transform.position.x, 0, spawn_note_z), Quaternion.identity);
                 note.transform.parent = gameObject.transform;
 
