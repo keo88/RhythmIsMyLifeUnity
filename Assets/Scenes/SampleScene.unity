@@ -855,7 +855,7 @@ MonoBehaviour:
   BeatScrollerObject: {fileID: 973135786}
   PythonManagerObject: {fileID: 768356925}
   HitBarObject: {fileID: 1091674636}
-  CurrentGameMode: 1
+  CurrentGameMode: 0
   Tempo: 0
   IsPlaying: 0
 --- !u!4 &1766046784
