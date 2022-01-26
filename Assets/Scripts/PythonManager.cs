@@ -8,7 +8,6 @@ using System.Net.Sockets;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
-using UnityEditor.Scripting.Python;
 
 public class PythonManager : MonoBehaviour
 {
