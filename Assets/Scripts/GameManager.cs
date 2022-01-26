@@ -5,17 +5,22 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public AudioSource Track;
+    public bool HasStarted;
+    public BeatScroller BeatScrollerObject;
+    public PythonLibrosaManager PythonManagerObject;
+    public HitBarScript HitBarObject;
+
+    public GameMode CurrentGameMode;
+
+    public float Tempo;
     public bool IsPlaying;
-    public BeatScroller BS;
-    public PythonLibrosaManager PM;
-    public HitBarScript HS;
 
     private bool has_clicked;
 
     // Start is called before the first frame update
     void Start()
     {
-        IsPlaying = false;
+        HasStarted = false;
 
         has_clicked = false;
     }
@@ -29,17 +34,32 @@ public class GameManager : MonoBehaviour
             has_clicked = true;
         }
 
-        if (!IsPlaying && has_clicked && PM.TempoIsAnalyzed)
+        if (!HasStarted && has_clicked && PythonManagerObject.TempoIsAnalyzed)
         {
-            IsPlaying = true;
+            HasStarted = true;
 
-            BS.Tempo = PM.Tempo / 60f;
-            BS.StartFlag = true;
+            IsPlaying = true;
+            Tempo = PythonManagerObject.Tempo / 60f;
 
             Track.Play();
         }
 
-        BS.UpdateBeatScroller();
-        HS.UpdateHitBar();
+        if (!Track.isPlaying && IsPlaying)
+        {
+            Track.UnPause();
+        }
+        else if (Track.isPlaying && !IsPlaying)
+        {
+            Track.Pause();
+        }
+
+        BeatScrollerObject.UpdateBeatScroller();
+        HitBarObject.UpdateHitBar();
     }
+}
+
+public enum GameMode
+{
+    RHYTHMGAME,
+    FAKEPLAY,
 }
