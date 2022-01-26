@@ -38,3 +38,4 @@ Unity.Timeline.Editor.csproj filter=lfs diff=lfs merge=lfs -text
 UnityEngine.UI.Player.csproj filter=lfs diff=lfs merge=lfs -text
 pythonExampleEvalExec.Player.csproj filter=lfs diff=lfs merge=lfs -text
 ProjectSettings filter=lfs diff=lfs merge=lfs -text
+bfg-1.14.0.jar filter=lfs diff=lfs merge=lfs -text
