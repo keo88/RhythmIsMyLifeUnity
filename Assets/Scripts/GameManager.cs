@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     public PythonManager PM;
     public HitBarScript HS;
     public AudioSource Track;
+    public VideoPlayer Video;
 
     public float Tempo;
     public float[] BeatArray;
@@ -26,7 +28,6 @@ public class GameManager : MonoBehaviour
         hasStarted = false;
         IsPlaying = false;
         isGameEnd = false;
-        Speed = 3.0f;
 
         Debug.Log("Game Start!");
         StartCoroutine(GameLoop());
@@ -42,10 +43,12 @@ public class GameManager : MonoBehaviour
             if (!Track.isPlaying && IsPlaying)
             {
                 Track.UnPause();
+                Video.Play();
             }
             else if (Track.isPlaying && !IsPlaying)
             {
                 Track.Pause();
+                Video.Pause();
             }
 
             // Note의 움직임을 관리
@@ -139,6 +142,7 @@ public class GameManager : MonoBehaviour
                 // HitBar와 NoteHolder 사이의 간격이 0이 되면 음악 재생
                 yield return new WaitForSeconds(-HS.transform.position.z * 60.0f / Tempo / Speed);
                 Track.Play();
+                Video.Play();
             }
 
             // 키보드 입력이 없으면 다음 프레임에 이 위치로 다시 돌아온다.
