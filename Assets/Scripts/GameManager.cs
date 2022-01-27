@@ -12,19 +12,21 @@ public class GameManager : MonoBehaviour
     public float Tempo;
     public float[] BeatArray;
     public float Speed;
+    public bool IsPlaying;
 
-    private bool isPlaying;
     private bool isGameEnd;
+    private bool hasStarted;
+
+    public GameMode CurrentGameMode;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        isPlaying = false;
+        hasStarted = false;
+        IsPlaying = false;
         isGameEnd = false;
         Speed = 3.0f;
-
-        //PM.RunPythonServer();
 
         Debug.Log("Game Start!");
         StartCoroutine(GameLoop());
@@ -35,8 +37,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // IsPlaying이 true일 때만 게임 플레이에 필요한 작업 활성화
-        if (isPlaying)
+        if (hasStarted)
         {
+            if (!Track.isPlaying && IsPlaying)
+            {
+                Track.UnPause();
+            }
+            else if (Track.isPlaying && !IsPlaying)
+            {
+                Track.Pause();
+            }
+
             // Note의 움직임을 관리
             BS.UpdateBeatScroller();
             // 키보드 입력을 받아 HitBar 동작
@@ -121,7 +132,8 @@ public class GameManager : MonoBehaviour
                 isKeyDown = true;
 
                 // IsPlaying을 true로 바꾸어서 HitBar입력, Note움직임이 활성화 되게 한다.
-                isPlaying = true;
+                hasStarted = true;
+                IsPlaying = true;
 
                 // 키보드 입력을 하자마자 바로 음악이 재생되는 것을 방지하기 위해 HitBar와 NoteHolder의 초기 위치가 일정 거리 만큼 떨어져 있다.
                 // HitBar와 NoteHolder 사이의 간격이 0이 되면 음악 재생
@@ -133,8 +145,9 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
+        
         // 현재 노래가 끝나면 while 문을 벗어난다.
-        while (Track.isPlaying)
+        while (true)
         {
 
             yield return null;
@@ -142,6 +155,7 @@ public class GameManager : MonoBehaviour
 
         //yield return new WaitForSeconds(5.0f);
         //Track.Stop();
+        
     }
 
 
@@ -153,7 +167,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Round Ending");
 
         // IsPlaying을 true로 바꾸어서 HitBar입력, Note움직임이 비활성화 되게 한다.
-        isPlaying = false;
+        hasStarted = false;
+        IsPlaying = false;
 
         // NoteHolder의 위치를 초기 위치로 되돌린다.
         BS.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
@@ -182,4 +197,10 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Round End");
     }
+}
+
+public enum GameMode
+{
+    RHYTHMGAME,
+    FAKEPLAY,
 }

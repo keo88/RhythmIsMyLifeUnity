@@ -5,6 +5,7 @@ using UnityEngine;
 public class NoteScript : MonoBehaviour
 {
     public KeyCode KeyToPress;
+    public GameManager GM;
 
     public bool CanBePressed;
 
@@ -20,6 +21,11 @@ public class NoteScript : MonoBehaviour
         if (Input.GetKeyDown(KeyToPress) && CanBePressed) 
         {
             gameObject.SetActive(false);
+
+            if (GM.CurrentGameMode == GameMode.FAKEPLAY)
+            {
+                GM.IsPlaying = true;
+            }
         }
     }
 
@@ -33,9 +39,24 @@ public class NoteScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other) 
     {
-        if (other.tag == "HitBar")
+        if (GM.CurrentGameMode == GameMode.RHYTHMGAME)
         {
-            CanBePressed = false;
+            if (other.tag == "HitBar")
+            {
+                CanBePressed = false;
+            }
+        }
+        else if (GM.CurrentGameMode == GameMode.FAKEPLAY)
+        {
+            if (other.tag == "HitBar")
+            {
+                GM.IsPlaying = false;
+            }
+        }
+
+        if (other.tag == "DestroyBar")
+        {
+            Destroy(gameObject);
         }
     }
 }

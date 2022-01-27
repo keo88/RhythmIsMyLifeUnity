@@ -35,13 +35,13 @@ public class BeatScroller : MonoBehaviour
     ///  Music distance는 악보 상의 거리로 4분의 1 노트 하나당 1의 길이를 가진다.
     ///  Current Music Distance는 주어진 악보에 대해 현재 시점 플레이 중인 악보 상의 position을 나타낸다.
     /// </summary>
-    public float CurrentMusicDistance;
+    public float CurrentMusicDistance { get; set; }
 
     /// <summary>
     /// lanes는 lane의 nested List로, 각 lane은 사용자가 switch 가능한 리듬이다. 
     /// 각 lane은 music distance의 배열이며 이 music distance element 하나당 해당 위치에 note 하나가 생성된다.
     /// </summary>
-    private List<List<float>> lanes;
+    public List<List<float>> lanes { get; set; }
 
     /// <summary>
     ///  lanes의 각 lane 마다 따로 관리되고 있는 지금까지 생성된 note의 index가 저장된 배열이다.
@@ -65,8 +65,6 @@ public class BeatScroller : MonoBehaviour
         lanes = new List<List<float>>();
         lane_spawn_heads = new List<int>();
 
-        
-
         // gameObject.transform.localScale = new Vector3(1f, 1f, Speed);
     }
 
@@ -77,8 +75,8 @@ public class BeatScroller : MonoBehaviour
     public void CreateLanes()
     {
         CreateLane(BeatArray, 1);
-        CreateLane(pattern2, 1);
-        CreateLane(pattern3, 1);
+        CreateLane(pattern2, 10);
+        CreateLane(pattern3, 10);
     }    
 
     public void UpdateBeatScroller()
@@ -103,19 +101,20 @@ public class BeatScroller : MonoBehaviour
             transform.position += new Vector3(0f, 0f, 0.1f * GM.Speed);
         }
 
-
-        transform.position += new Vector3((target_lane_position_x - transform.position.x) * 0.1f, 0f, -Tempo * Time.deltaTime * GM.Speed);
-
-        float delta_music_dist = Tempo * Time.deltaTime;
-        check_elapsed_music_dist += delta_music_dist;
-
-        if (check_elapsed_music_dist >= SpawnCheckInterval)
+        if (GM.IsPlaying)
         {
-            CreateAdjacentNotes();
-            check_elapsed_music_dist -= SpawnCheckInterval;
+            transform.position += new Vector3((target_lane_position_x - transform.position.x) * 0.1f, 0f, -GM.Tempo * Time.deltaTime * GM.Speed);
+
+            float delta_music_dist = Tempo * Time.deltaTime;
+            check_elapsed_music_dist += delta_music_dist;
+
+            if (check_elapsed_music_dist >= SpawnCheckInterval)
+            {
+                CreateAdjacentNotes();
+                check_elapsed_music_dist -= SpawnCheckInterval;
+            }
+            CurrentMusicDistance += Tempo * Time.deltaTime;
         }
-        CurrentMusicDistance += Tempo * Time.deltaTime;
-        
     }
 
 
@@ -149,6 +148,7 @@ public class BeatScroller : MonoBehaviour
                 float spawn_note_z = (lanes[lane_index][lane_spawn_heads[lane_index]] - CurrentMusicDistance) * GM.Speed;
                 GameObject note = Instantiate(Note, new Vector3(lane_index * LANEGAP + gameObject.transform.position.x, 0, spawn_note_z), Quaternion.identity);
                 note.transform.parent = gameObject.transform;
+                note.GetComponent<NoteScript>().GM = GM;
 
                 lane_spawn_heads[lane_index]++;
             }
