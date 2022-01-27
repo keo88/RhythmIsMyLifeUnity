@@ -1,78 +1,119 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using UnityEditor.Scripting.Python;
 using System.Threading;
 using System.Net;
 using System.Text;
 using System.Net.Sockets;
+using System.Diagnostics;
+using System.IO;
+using System.Threading.Tasks;
 
 public class PythonManager : MonoBehaviour
 {
-    public string connectionIP = "127.0.0.1";
-    public int connectionPort = 9999;
-    public string MusicFilePath = "Assets/MusicSample/Canon.wav";
-    public int Tempo = 0;
+    public GameManager GM;
+    public string MusicName;
+    public float Tempo;
     public bool TempoIsAnalyzed = false;
 
-    Thread mThread;
-    IPAddress localAdd;
-    TcpListener listener;
-    TcpClient client;
 
-    bool has_sent_info = false;
+    private string connectionIP = "127.0.0.1";
+    private int connectionPort = 9999;
+    private Thread mThread;
+    private string pythonScriptPath;
+    private string pythonEnv;
+    private Process pythonServer;
 
-    private void Start()
+
+    public void RunPythonServer()
     {
-        ThreadStart ts = new ThreadStart(GetInfo);
-        mThread = new Thread(ts);
-        mThread.Start();
+        Tempo = 0;
 
-        string path = Application.dataPath + "/Scripts/log_names.py";
-        PythonRunner.RunFile(path);
+        pythonScriptPath = Application.dataPath + "/Python/main.py";
+        pythonEnv = Application.dataPath + "/Python/venv/Scripts/python.exe";
+        pythonEnv = @"E:\Programs\Python\Anaconda\envs\librosa\python.exe";
+
+        pythonServer = new Process();
+        UnityEngine.Debug.Log("Run Python Server: " + pythonEnv + " " + pythonScriptPath);
+
+        pythonServer.StartInfo = new ProcessStartInfo("\"" + pythonEnv + "\"", "\"" + pythonScriptPath + "\"")
+        {
+            UseShellExecute = true,
+            CreateNoWindow = false,
+        };
+
+        pythonServer.Start();
+
+        GetData();
+
+        pythonServer.Kill();
     }
 
-    void GetInfo()
+
+    void ParsePacket(string packet)
     {
-        localAdd = IPAddress.Parse(connectionIP);
-        listener = new TcpListener(IPAddress.Any, connectionPort);
-        listener.Start();
+        string[] packetData = packet.Split(' ');
 
-        client = listener.AcceptTcpClient();
+        GM.Tempo = float.Parse(packetData[0]);
 
-        while (true)
+        int beatArrayLength = packetData.Length - 1;
+        GM.BeatArray = new float[beatArrayLength];
+        for (int i = 0; i < beatArrayLength; i++)
         {
-            SendAndReceiveData();
+            GM.BeatArray[i] = float.Parse(packetData[i+1]);
         }
     }
 
-    void SendAndReceiveData()
+
+    public void GetData()
     {
-        NetworkStream nwStream = client.GetStream();
-
-        if (!has_sent_info && client.Connected && nwStream.CanWrite)
+        using (Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
         {
-            has_sent_info = true;
-            byte[] StrByte = Encoding.UTF8.GetBytes(MusicFilePath);
-            nwStream.Write(StrByte, 0, StrByte.Length);
+            while (true)
+            {
+                try
+                {
+                    client.Connect(new IPEndPoint(IPAddress.Parse(connectionIP), connectionPort));
+                    byte[] data_path = Encoding.UTF8.GetBytes(Application.dataPath + "/MusicSample/" + MusicName);
+                    client.Send(data_path);
+
+                    int size = 10;
+                    byte[] data = new byte[size];
+                    int bytes_read = client.Receive(data, data.Length, SocketFlags.None);    
+                    string data_received = Encoding.UTF8.GetString(data, 0, bytes_read);
+                    int packetLength = int.Parse(data_received);
+                    UnityEngine.Debug.Log("packet length: " + data_received);
+                    
+
+                    data  = new byte[packetLength];
+                    bytes_read = client.Receive(data, data.Length, SocketFlags.None);
+                    data_received = Encoding.UTF8.GetString(data, 0, bytes_read);
+                    UnityEngine.Debug.Log("packet data: " + data_received);
+
+                    ParsePacket(data_received);
+
+                    //Tempo = float.Parse(data_received);
+                    TempoIsAnalyzed = true;
+
+                    byte[] msg_data = Encoding.ASCII.GetBytes("Got message!");
+                    client.Send(msg_data);
+
+                    break;
+                }
+                catch (SocketException se)
+                {
+                    UnityEngine.Debug.Log(se.Message);
+                }
+            }
+
+            client.Close();
         }
 
-        
-        byte[] buffer = new byte[client.ReceiveBufferSize];
+        UnityEngine.Debug.Log("get data");
+    }
 
-        // reveiving Data from the Host
-        int bytesRead = nwStream.Read(buffer, 0, client.ReceiveBufferSize);
-        string dataReceived = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-
-        if (dataReceived != null && dataReceived != "")
-        {
-            Debug.Log(dataReceived);
-            Tempo = int.Parse(dataReceived);
-            TempoIsAnalyzed = true;
-            byte[] myWirteBuffer = Encoding.ASCII.GetBytes("Got message!");
-            nwStream.Write(myWirteBuffer, 0, myWirteBuffer.Length);
-        }
-
+    private void OnDestroy()
+    {
+        //pythonServer.Kill();
     }
 }
