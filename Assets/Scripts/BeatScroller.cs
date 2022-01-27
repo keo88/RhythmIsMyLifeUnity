@@ -103,7 +103,7 @@ public class BeatScroller : MonoBehaviour
 
         if (GM.IsPlaying)
         {
-            transform.position += new Vector3((target_lane_position_x - transform.position.x) * 0.1f, 0f, -GM.Tempo * Time.deltaTime * GM.Speed);
+            transform.position += new Vector3((target_lane_position_x - transform.position.x) * 0.1f, 0f, -Tempo * Time.deltaTime * GM.Speed);
 
             float delta_music_dist = Tempo * Time.deltaTime;
             check_elapsed_music_dist += delta_music_dist;

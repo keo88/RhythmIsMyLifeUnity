@@ -31,11 +31,12 @@ public class PythonManager : MonoBehaviour
 
         pythonScriptPath = Application.dataPath + "/Python/main.py";
         pythonEnv = Application.dataPath + "/Python/venv/Scripts/python.exe";
+        pythonEnv = @"E:\Programs\Python\Anaconda\envs\librosa\python.exe";
 
         pythonServer = new Process();
         UnityEngine.Debug.Log("Run Python Server: " + pythonEnv + " " + pythonScriptPath);
 
-        pythonServer.StartInfo = new ProcessStartInfo(pythonEnv, pythonScriptPath)
+        pythonServer.StartInfo = new ProcessStartInfo("\"" + pythonEnv + "\"", "\"" + pythonScriptPath + "\"")
         {
             UseShellExecute = true,
             CreateNoWindow = false,
