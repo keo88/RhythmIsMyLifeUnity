@@ -1,8 +1,6 @@
 import socket
 import threading
 import time
-from music21 import *
-import numpy as np
 import midi_analyzer as ma
 
 test_mode = False
@@ -21,28 +19,26 @@ def packetizing(base_midi):
     return data_packet
 
 
-def binder(client_socket, address):
+def binder(client_socket, address, thread_number):
     try:
         received_music_path = client_socket.recv(1024).decode("UTF-8")
-        print('Current Music Path: ', received_music_path)
         music_file = received_music_path
+        print(f'Thread {thread_number}: Current Music Path: ', received_music_path)
 
         base_midi = ma.open_midi(music_file)
-
         data_packet = packetizing(base_midi)
-        # print(len(data_packet), data_packet)
 
         packet_length = str(len(data_packet))
         client_socket.sendall(packet_length.encode("UTF-8"))
-        data_packet = data_packet
+
         client_socket.sendall(data_packet.encode("UTF-8"))
 
         received_data = client_socket.recv(1024).decode("UTF-8")
-        print('Python Server: ', received_data)
+        print(f'Thread {thread_number}: From client - ', received_data)
 
     except Exception as e:
-        print('Client Error: ' + str(e))
-        print()
+        print(f'Thread {thread_number}: Client Error - ' + str(e))
+
     finally:
         client_socket.close()
 
@@ -54,7 +50,6 @@ def initialize_socket():
     server_socket.listen(30)
 
     return server_socket
-
 
 if test_mode:
     print('Start Test Mode ... ')
@@ -72,20 +67,27 @@ if test_mode:
     print(len(packet), packet)
 
 else:
-    server_socket = initialize_socket()
-    print('Server Established On!')
+    try:
+        server_socket = initialize_socket()
+        thread_cnt = 0
+        print('Server Established On!')
 
-    while True:
-        try:
-            print('listening')
-            client_socket, address = server_socket.accept()
-            print('accepted')
+        while True:
+            try:
+                print('listening')
+                client_socket, address = server_socket.accept()
+                print('accepted')
 
-            th = threading.Thread(target=binder, args=(client_socket, address))
-            th.start()
+                th = threading.Thread(target=binder, args=(client_socket, address, thread_cnt))
+                th.start()
+                thread_cnt += 1
 
-        except Exception as e:
-            print('Acceptance Error: ' + str(e))
-            time.sleep(2)
-        finally:
-            server_socket.close()
+            except Exception as e:
+                print('Acceptance Error: ' + str(e))
+                time.sleep(2)
+                break
+
+        server_socket.close()
+    except Exception as e:
+        f = open('log.txt', 'w')
+        f.write(str(e))
