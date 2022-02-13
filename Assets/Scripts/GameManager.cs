@@ -12,22 +12,29 @@ public class GameManager : MonoBehaviour
     public VideoPlayer Video;
 
     public float Tempo;
-    public float[] BeatArray;
+    public Chord[] ChordArray;
     public float Speed;
     public bool IsPlaying;
+
+    public GameMode CurrentGameMode;
+
+    public struct Chord
+    {
+        public float offset;
+        public int pitch;
+    }
 
     private bool isGameEnd;
     private bool hasStarted;
 
-    public GameMode CurrentGameMode;
-
-
+ 
     // Start is called before the first frame update
     void Start()
     {
         hasStarted = false;
         IsPlaying = false;
         isGameEnd = false;
+        Video.SetDirectAudioVolume(0, 0.5f);
 
         Debug.Log("Game Start!");
         StartCoroutine(GameLoop());
@@ -40,14 +47,14 @@ public class GameManager : MonoBehaviour
         // IsPlaying이 true일 때만 게임 플레이에 필요한 작업 활성화
         if (hasStarted)
         {
-            if (!Track.isPlaying && IsPlaying)
+            if (!Video.isPlaying && IsPlaying)
             {
-                Track.UnPause();
+                //Track.UnPause();
                 Video.Play();
             }
-            else if (Track.isPlaying && !IsPlaying)
+            else if (Video.isPlaying && !IsPlaying)
             {
-                Track.Pause();
+                //Track.Pause();
                 Video.Pause();
             }
 
@@ -108,7 +115,7 @@ public class GameManager : MonoBehaviour
          * To do BeatScroller 내의 하나의 함수로 통합하기
          */
         BS.Tempo = Tempo / 60f;
-        BS.BeatArray = BeatArray;
+        BS.ChordArray = ChordArray;
         BS.CreateLanes();
 
         Debug.Log("Round Setup Done");
@@ -141,7 +148,7 @@ public class GameManager : MonoBehaviour
                 // 키보드 입력을 하자마자 바로 음악이 재생되는 것을 방지하기 위해 HitBar와 NoteHolder의 초기 위치가 일정 거리 만큼 떨어져 있다.
                 // HitBar와 NoteHolder 사이의 간격이 0이 되면 음악 재생
                 yield return new WaitForSeconds(-HS.transform.position.z * 60.0f / Tempo / Speed);
-                Track.Play();
+                //Track.Play();
                 Video.Play();
             }
 

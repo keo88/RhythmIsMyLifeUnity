@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+pyrubberband/__init__.py
+pyrubberband/pyrb.py
+pyrubberband/version.py
+pyrubberband.egg-info/PKG-INFO
+pyrubberband.egg-info/SOURCES.txt
+pyrubberband.egg-info/dependency_links.txt
+pyrubberband.egg-info/pbr.json
+pyrubberband.egg-info/requires.txt
+pyrubberband.egg-info/top_level.txt

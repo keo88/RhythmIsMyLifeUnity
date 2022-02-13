@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class HitBarScript : MonoBehaviour
 {
-    private Renderer renderer;
+    public GameManager GM;
+    public MidiStreamManager MidiStreamManagerScript;
+
     public Color ColorDefault;
     public Color ColorClicked;
-
     public KeyCode HitKey;
+
+    private Renderer renderer;
+    private bool isNoteInHitBar = false;
+    private GameObject note = null;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +32,48 @@ public class HitBarScript : MonoBehaviour
         if (Input.GetKeyDown(HitKey))
         {
             renderer.material.SetColor("_Color", ColorClicked);
+
+            if (isNoteInHitBar)
+            {
+                note.SetActive(false);
+                int pitch = note.GetComponent<NoteScript>().pitch;
+                MidiStreamManagerScript.PlayNote(pitch, 1000);
+
+                if (GM.CurrentGameMode == GameMode.FAKEPLAY)
+                {
+                    GM.IsPlaying = true;
+                    isNoteInHitBar = false;
+                }
+            }
         }
         else if (Input.GetKeyUp(HitKey))
         {
             renderer.material.SetColor("_Color", ColorDefault);
+            
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Note")
+        {
+            isNoteInHitBar = true;
+            note = other.gameObject;   
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Note")
+        {
+            if (GM.CurrentGameMode == GameMode.FAKEPLAY)
+            {
+                GM.IsPlaying = false;
+            }
+            else if (GM.CurrentGameMode == GameMode.RHYTHMGAME)
+            {
+                isNoteInHitBar = false;
+            }
         }
     }
 }

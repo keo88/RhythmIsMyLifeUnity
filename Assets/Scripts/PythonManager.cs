@@ -157,10 +157,18 @@ public class PythonManager : MonoBehaviour
         GM.Tempo = float.Parse(packetData[0]);
 
         int beatArrayLength = packetData.Length - 1;
-        GM.BeatArray = new float[beatArrayLength];
+        GM.ChordArray = new GameManager.Chord[beatArrayLength];
+
         for (int i = 0; i < beatArrayLength; i++)
         {
-            GM.BeatArray[i] = float.Parse(packetData[i + 1]);
+            //GM.BeatArray[i] = float.Parse(packetData[i + 1]);
+
+            string[] data = packetData[i + 1].Split(',');
+            GameManager.Chord chord;
+            chord.offset = float.Parse(data[0]);
+            chord.pitch = int.Parse(data[1]) - 12;
+
+            GM.ChordArray[i] = chord;
         }
     }
 

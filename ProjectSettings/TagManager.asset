@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HitBar
   - DestroyBar
+  - Note
   layers:
   - Default
   - TransparentFX

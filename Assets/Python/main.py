@@ -6,15 +6,22 @@ import midi_analyzer as ma
 test_mode = False
 
 
+def tuple_to_string(data):
+    return str(data[0]) + ',' + str(data[1])
+
+
 def packetizing(base_midi):
     bpm, time_signature = ma.extract_features(base_midi)
 
-    beats_array = ma.extract_beats_array(base_midi)
-    beats_list = list(map(str, beats_array))
+    offset_array, pitch_array = ma.extract_beats_array(base_midi)
+    offset_list = list(offset_array)
+    pitch_list = list(pitch_array)
+    ddd = list(zip(offset_list, pitch_list))
+    ddd = list(map(tuple_to_string, ddd))
 
-    beats_line = ' '.join(beats_list)
+    data_packet = ' '.join(ddd)
 
-    data_packet = str(bpm) + ' ' + beats_line
+    data_packet = str(bpm) + ' ' + data_packet
 
     return data_packet
 
@@ -53,15 +60,13 @@ def initialize_socket():
 
 if test_mode:
     print('Start Test Mode ... ')
-    music_file = 'C:/Projects/2022/RhythmIsMyLifeUnity/Assets/MusicSample/Holiday.mid'
+    music_file = 'C:/Projects/2022/RhythmIsMyLifeUnity/Assets/MusicSample/Green-Day-Holiday-Lyrics-chord.midi'
 
     base_midi = ma.open_midi(music_file)
 
     ma.list_instruments(base_midi)
 
-    beat_array = ma.extract_beats_array(base_midi)
-
-    print(len(beat_array))
+    offset_array, pitch_array = ma.extract_beats_array(base_midi)
 
     packet = packetizing(base_midi)
     print(len(packet), packet)
