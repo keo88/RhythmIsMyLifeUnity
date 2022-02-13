@@ -1,6 +1,8 @@
 import socket
 import threading
 import time
+import librosa
+import numpy as np
 import midi_analyzer as ma
 
 test_mode = False
@@ -10,7 +12,16 @@ def tuple_to_string(data):
     return str(data[0]) + ',' + str(data[1])
 
 
-def packetizing(base_midi):
+def beat_packetizing(music_file):
+    x, sr = librosa.load(music_file)
+    tempo, beats = librosa.beat.beat_track(y=x, sr=sr, start_bpm=60, units='time')
+    beat_times = np.round(beats, 2)
+    print(f'estimated Tempo : {tempo}')
+
+    return ' '.join(list(map(lambda item: str(item), beat_times)))
+
+
+def midi_packetizing(base_midi):
     bpm, time_signature = ma.extract_features(base_midi)
 
     offset_array, pitch_array = ma.extract_beats_array(base_midi)
@@ -32,19 +43,30 @@ def binder(client_socket, address, thread_number):
         music_file = received_music_path
         print(f'Thread {thread_number}: Current Music Path: ', received_music_path)
 
-        base_midi = ma.open_midi(music_file)
-        data_packet = packetizing(base_midi)
+        # Midi processing
+        chord_midi_path = received_music_path.replace('.mp3', '').replace('.wav', '') + '-chord.midi'
 
-        packet_length = str(len(data_packet))
+        base_midi = ma.open_midi(chord_midi_path)
+        midi_data_packet = midi_packetizing(base_midi)
+
+        packet_length = str(len(midi_data_packet))
         client_socket.sendall(packet_length.encode("UTF-8"))
 
-        client_socket.sendall(data_packet.encode("UTF-8"))
+        client_socket.sendall(midi_data_packet.encode("UTF-8"))
 
+        # Beat processing
+        beat_data_packet = beat_packetizing(music_file)
+        packet_length = str(len(beat_data_packet))
+        client_socket.sendall(packet_length.encode("UTF-8"))
+
+        client_socket.sendall(beat_data_packet.encode("UTF-8"))
+
+        # Checking process done
         received_data = client_socket.recv(1024).decode("UTF-8")
         print(f'Thread {thread_number}: From client - ', received_data)
 
-    except Exception as e:
-        print(f'Thread {thread_number}: Client Error - ' + str(e))
+    #except Exception as e:
+    #    print(f'Thread {thread_number}: Client Error - ' + str(e))
 
     finally:
         client_socket.close()
@@ -68,7 +90,7 @@ if test_mode:
 
     offset_array, pitch_array = ma.extract_beats_array(base_midi)
 
-    packet = packetizing(base_midi)
+    packet = midi_packetizing(base_midi)
     print(len(packet), packet)
 
 else:

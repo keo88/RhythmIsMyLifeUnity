@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 public class PythonManager : MonoBehaviour
 {
     public GameManager GM;
-    public string MusicName;
     public float Tempo;
     public bool TempoIsAnalyzed = false;
+    public int PitchModifier;
 
     private string connectionIP = "127.0.0.1";
     private int connectionPort = 9999;
@@ -22,7 +22,7 @@ public class PythonManager : MonoBehaviour
     private string musicDirectory;
 
 
-    public async void RunPythonServer()
+    public async Task<bool> RunPythonServer()
     {
         Task chordAnalyzeTask;
         string CmdText;
@@ -30,9 +30,10 @@ public class PythonManager : MonoBehaviour
         string pythonDirectory = Application.dataPath + "/Python/";
         string pythonScriptPath = pythonDirectory + "main.py";
         string chordAnalyzePath = pythonDirectory + "chord_analyzer.py";
+
         string targetChordMidi = GM.Track.clip.name.Replace(".mp3", string.Empty).Replace(".wav", string.Empty) + "-chord.midi";
 
-        musicDirectory = $"{Application.dataPath}/MusicSample/";
+        musicDirectory = $"{Application.dataPath}/Resources/Music/";
         Tempo = 0;
 
         // 김기오 사용환경일때
@@ -47,10 +48,6 @@ public class PythonManager : MonoBehaviour
 
         chordAnalyzeTask = WhenFileCreated($"{musicDirectory}{targetChordMidi}");
 
-        CmdText = $"/C {pythonEnv} \"{pythonScriptPath}\"";
-        pythonServer = Process.Start("CMD.exe", CmdText);
-        GetData();
-
         // chord midi 파일 생성.
         if (!File.Exists($"{musicDirectory}{targetChordMidi}"))
         {
@@ -59,8 +56,11 @@ public class PythonManager : MonoBehaviour
 
         await chordAnalyzeTask;
 
-        //여기에 MIDI CHORD 프로세싱 함수 넣기
-        UnityEngine.Debug.Log($"This line should not show before midi file processing is done.");
+        CmdText = $"/C {pythonEnv} \"{pythonScriptPath}\"";
+        pythonServer = Process.Start("CMD.exe", CmdText);
+        GetData();
+
+        return true;
     }
 
 
@@ -73,27 +73,36 @@ public class PythonManager : MonoBehaviour
                 try
                 {
                     client.Connect(new IPEndPoint(IPAddress.Parse(connectionIP), connectionPort));
-                    byte[] data_path = Encoding.UTF8.GetBytes(musicDirectory + MusicName);
+                    byte[] data_path = Encoding.UTF8.GetBytes(musicDirectory + GM.MusicName);
                     client.Send(data_path);
 
                     int size = 10;
                     byte[] data = new byte[size];
-                    int bytes_read = client.Receive(data, data.Length, SocketFlags.None);
 
+                    int bytes_read = client.Receive(data, data.Length, SocketFlags.None);
                     string data_received = Encoding.UTF8.GetString(data, 0, bytes_read);
                     int packetLength = int.Parse(data_received);
-                    UnityEngine.Debug.Log("packet length: " + data_received);
-                    
+                    UnityEngine.Debug.Log("Midi packet length: " + data_received);
 
                     data  = new byte[packetLength];
                     bytes_read = client.Receive(data, data.Length, SocketFlags.None);
                     data_received = Encoding.UTF8.GetString(data, 0, bytes_read);
-                    UnityEngine.Debug.Log("packet data: " + data_received);
+                    UnityEngine.Debug.Log("Midi packet data: " + data_received);
 
-                    ParsePacket(data_received);
-
-                    //Tempo = float.Parse(data_received);
+                    ParseMidiPacket(data_received);
                     TempoIsAnalyzed = true;
+
+                    bytes_read = client.Receive(data, data.Length, SocketFlags.None);
+                    data_received = Encoding.UTF8.GetString(data, 0, bytes_read);
+                    packetLength = int.Parse(data_received);
+                    UnityEngine.Debug.Log("Beat packet length: " + data_received);
+
+                    data = new byte[packetLength];
+                    bytes_read = client.Receive(data, data.Length, SocketFlags.None);
+                    data_received = Encoding.UTF8.GetString(data, 0, bytes_read);
+                    UnityEngine.Debug.Log("Beat packet data: " + data_received);
+
+                    ParseBeatPacket(data_received);
 
                     byte[] msg_data = Encoding.ASCII.GetBytes("Got message!");
                     client.Send(msg_data);
@@ -150,26 +159,45 @@ public class PythonManager : MonoBehaviour
 
         return tcs.Task;
     }
-    void ParsePacket(string packet)
+
+    void ParseBeatPacket(string packet)
+    {
+        string[] packetData = packet.Split(' ');
+        float beatInSec;
+
+        GM.BeatArray = new List<float>();
+
+        foreach (string beat in packetData)
+        {
+            beatInSec = float.Parse(beat);
+            GM.BeatArray.Add(beatInSec * GM.Tempo / 60.0f);
+        }
+
+        UnityEngine.Debug.Log(string.Join(" ", GM.BeatArray));
+    }
+
+    void ParseMidiPacket(string packet)
     {
         string[] packetData = packet.Split(' ');
 
+        GM.ChordArray = new List<Chord>();
         GM.Tempo = float.Parse(packetData[0]);
 
         int beatArrayLength = packetData.Length - 1;
-        GM.ChordArray = new GameManager.Chord[beatArrayLength];
 
         for (int i = 0; i < beatArrayLength; i++)
         {
             //GM.BeatArray[i] = float.Parse(packetData[i + 1]);
 
             string[] data = packetData[i + 1].Split(',');
-            GameManager.Chord chord;
+            Chord chord = new Chord();
             chord.offset = float.Parse(data[0]);
-            chord.pitch = int.Parse(data[1]) - 12;
+            chord.pitch = int.Parse(data[1]) + PitchModifier;
 
-            GM.ChordArray[i] = chord;
+            GM.ChordArray.Add(chord);
         }
+
+        UnityEngine.Debug.Log("Last Chord Length: " + GM.ChordArray[GM.ChordArray.Count - 1].offset);
     }
 
     private void OnDestroy()

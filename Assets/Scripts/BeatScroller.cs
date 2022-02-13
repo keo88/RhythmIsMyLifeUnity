@@ -6,7 +6,7 @@ public class BeatScroller : MonoBehaviour
 {
     public GameManager GM;
 
-    public const int BARSIZE = 8;
+    public const int BARSIZE = 6;
     public int LANEGAP = 4;
 
     public KeyCode SwitchLaneLeftKey;
@@ -27,15 +27,9 @@ public class BeatScroller : MonoBehaviour
     public float SpawnCheckInterval;
 
     public float Tempo;
-    public GameManager.Chord[] ChordArray;
+    public List<Chord> ChordArray;
     public bool StartFlag;
     public int CurrentLane;
-
-    /// <summary>
-    ///  Music distance는 악보 상의 거리로 4분의 1 노트 하나당 1의 길이를 가진다.
-    ///  Current Music Distance는 주어진 악보에 대해 현재 시점 플레이 중인 악보 상의 position을 나타낸다.
-    /// </summary>
-    public float CurrentMusicDistance { get; set; }
 
     /// <summary>
     /// lanes는 lane의 nested List로, 각 lane은 사용자가 switch 가능한 리듬이다. 
@@ -46,37 +40,35 @@ public class BeatScroller : MonoBehaviour
     /// <summary>
     ///  lanes의 각 lane 마다 따로 관리되고 있는 지금까지 생성된 note의 index가 저장된 배열이다.
     /// </summary>
-    private List<int> lane_spawn_heads;
+    private List<int> laneSpawnHeads;
+    private int chordHead;
 
-    private float[] pattern1 = { 2f, 4f, 6f, 8f };
-    private float[] pattern2 = { 1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f };
-    private float[] pattern3 = { 1f, 1.5f, 2f, 3f, 3.5f, 4f, 4.5f, 5f, 5.5f, 6f, 6.5f, 7f, 7.5f, 8f };
+    private List<float> pattern1 = new List<float>{ 0f, 2f, 4f, 6f };
+    private List<float> pattern2 = new List<float>{ 0f, 2f, 1f, 3f, 4f, 5f, 6f, 7f };
+    private List<float> pattern3 = new List<float>{ 1f, 1.5f, 2f, 3f, 3.5f, 4f, 4.5f, 5f, 5.5f, 6f, 6.5f, 7f, 7.5f, 8f };
 
-    private int target_lane_position_x;
-    private float check_elapsed_music_dist;
+    private int targetLanePositionX;
+    private float checkElapsedMusicDist;
 
     // Start is called before the first frame update
     void Start()
     {
         CurrentLane = 0;
         Tempo = 0;
-        CurrentMusicDistance = 0f;
+        chordHead = 0;
+
+        GM.CurrentMusicDistance = 0f;
 
         lanes = new List<List<float>>();
-        lane_spawn_heads = new List<int>();
-
-        // gameObject.transform.localScale = new Vector3(1f, 1f, Speed);
+        laneSpawnHeads = new List<int>();
     }
 
-
-    private void Update()
-    {
-    }
     public void CreateLanes()
     {
         CreateLane(ChordArray, 1);
-        CreateLane(ChordArray, 10);
-        CreateLane(ChordArray, 10);
+        CreateLane(GM.BeatArray, 1);
+        CreateLane(pattern1, 100);
+        CreateLane(pattern2, 100);
     }    
 
     public void UpdateBeatScroller()
@@ -84,13 +76,13 @@ public class BeatScroller : MonoBehaviour
         if (Input.GetKeyDown(SwitchLaneLeftKey))
         {
             CurrentLane = (CurrentLane + lanes.Count - 1) % lanes.Count;
-            target_lane_position_x = -CurrentLane * LANEGAP;
-            Debug.Log(target_lane_position_x);
+            targetLanePositionX = -CurrentLane * LANEGAP;
+            Debug.Log(targetLanePositionX);
         }
         else if (Input.GetKeyDown(SwitchLaneRightKey))
         {
             CurrentLane = (CurrentLane + 1) % lanes.Count;
-            target_lane_position_x = -CurrentLane * LANEGAP;
+            targetLanePositionX = -CurrentLane * LANEGAP;
         }
         else if (Input.GetKeyDown(DebugLaneSyncForwardKey))
         {
@@ -103,33 +95,57 @@ public class BeatScroller : MonoBehaviour
 
         if (GM.IsPlaying)
         {
-            transform.position += new Vector3((target_lane_position_x - transform.position.x) * 0.1f, 0f, -Tempo * Time.deltaTime * GM.Speed);
+            transform.position += new Vector3((targetLanePositionX - transform.position.x) * 0.1f, 0f, -Tempo * Time.deltaTime * GM.Speed);
 
             float delta_music_dist = Tempo * Time.deltaTime;
-            check_elapsed_music_dist += delta_music_dist;
 
-            if (check_elapsed_music_dist >= SpawnCheckInterval)
+            checkElapsedMusicDist += delta_music_dist;
+            GM.CurrentMusicDistance += delta_music_dist;
+
+            if (checkElapsedMusicDist >= SpawnCheckInterval)
             {
                 CreateAdjacentNotes();
-                check_elapsed_music_dist -= SpawnCheckInterval;
+                checkElapsedMusicDist -= SpawnCheckInterval;
             }
-            CurrentMusicDistance += Tempo * Time.deltaTime;
+
+            while (chordHead < ChordArray.Count && ChordArray[chordHead].offset < GM.CurrentMusicDistance)
+            {
+                chordHead++;
+            }
+
+            GM.CurrentChord = ChordArray[chordHead];
         }
     }
 
 
-    private void CreateLane(GameManager.Chord[] patterns, int loop)
+    private void CreateLane(List<Chord> patterns, int loop)
     {
         List<float> lane = new List<float>();
 
-        lane_spawn_heads.Add(0);
+        laneSpawnHeads.Add(0);
         lanes.Add(lane);
 
         for (int bar = 0; bar < loop * BARSIZE; bar += BARSIZE)
         {
-            foreach (GameManager.Chord chord in patterns)
+            foreach (Chord chord in patterns)
             {
                 lane.Add(bar + chord.offset);
+            }
+        }
+    }
+
+    private void CreateLane(List<float> patterns, int loop)
+    {
+        List<float> lane = new List<float>();
+
+        laneSpawnHeads.Add(0);
+        lanes.Add(lane);
+
+        for (int bar = 0; bar < loop * BARSIZE; bar += BARSIZE)
+        {
+            foreach (float note in patterns)
+            {
+                lane.Add(bar + note);
             }
         }
     }
@@ -139,18 +155,18 @@ public class BeatScroller : MonoBehaviour
     /// </summary>
     private void CreateAdjacentNotes()
     {
-        float spawn_cap = CurrentMusicDistance + SpawnNoteMusicDistance;
+        float spawn_cap = GM.CurrentMusicDistance + SpawnNoteMusicDistance;
 
         for (int lane_index = 0; lane_index < lanes.Count; lane_index++)
         {
-            while (lane_spawn_heads[lane_index] < lanes[lane_index].Count && lanes[lane_index][lane_spawn_heads[lane_index]] <= spawn_cap)
+            while (laneSpawnHeads[lane_index] < lanes[lane_index].Count && lanes[lane_index][laneSpawnHeads[lane_index]] <= spawn_cap)
             {
-                float spawn_note_z = (lanes[lane_index][lane_spawn_heads[lane_index]] - CurrentMusicDistance) * GM.Speed;
+                float spawn_note_z = (lanes[lane_index][laneSpawnHeads[lane_index]] - GM.CurrentMusicDistance) * GM.Speed;
                 GameObject note = Instantiate(Note, new Vector3(lane_index * LANEGAP + gameObject.transform.position.x, 0, spawn_note_z), Quaternion.identity);
                 note.transform.parent = gameObject.transform;
-                note.GetComponent<NoteScript>().pitch = ChordArray[lane_spawn_heads[lane_index]].pitch;
+                // note.GetComponent<NoteScript>().pitch = ChordArray[laneSpawnHeads[lane_index]].pitch;
 
-                lane_spawn_heads[lane_index]++;
+                laneSpawnHeads[lane_index]++;
             }
         }
     }

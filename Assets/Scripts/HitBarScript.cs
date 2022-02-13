@@ -36,14 +36,18 @@ public class HitBarScript : MonoBehaviour
             if (isNoteInHitBar)
             {
                 note.SetActive(false);
-                int pitch = note.GetComponent<NoteScript>().pitch;
-                MidiStreamManagerScript.PlayNote(pitch, 1000);
+                // int pitch = note.GetComponent<NoteScript>().pitch;
+                // MidiStreamManagerScript.PlayNote(pitch, 1000);
 
                 if (GM.CurrentGameMode == GameMode.FAKEPLAY)
                 {
                     GM.IsPlaying = true;
                     isNoteInHitBar = false;
                 }
+            }
+            if (GM.CurrentChord != null)
+            {
+                MidiStreamManagerScript.PlayNote(GM.CurrentChord.pitch, 1000);
             }
         }
         else if (Input.GetKeyUp(HitKey))

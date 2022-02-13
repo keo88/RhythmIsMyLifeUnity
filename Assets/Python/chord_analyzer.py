@@ -19,7 +19,7 @@ device = torch.device("cuda" if use_cuda else "cpu")
 
 # hyperparameters
 parser = argparse.ArgumentParser()
-parser.add_argument('--voca', default=True, type=lambda x: (str(x).lower() == 'true'))
+parser.add_argument('--voca', default=False, type=lambda x: (str(x).lower() == 'true'))
 parser.add_argument('--audio_dir', type=str, default='../MusicSample')
 parser.add_argument('--save_dir', type=str, default='../MusicSample')
 args = parser.parse_args()
@@ -109,7 +109,12 @@ for i, audio_path in enumerate(audio_paths):
     for p in range(12):
         for i, (interval, chord) in enumerate(zip(intervals, chords)):
             root_num, relative_bitmap, _ = mir_eval.chord.encode(chord)
-            tmp_label = mir_eval.chord.rotate_bitmap_to_root(relative_bitmap, root_num)[p]
+
+            # 1. Only Take Root
+            tmp_label = 1 if root_num == p else 0
+
+            # 2. Rotate To Get Every Notes
+            # tmp_label = mir_eval.chord.rotate_bitmap_to_root(relative_bitmap, root_num)[p]
             if i == 0:
                 start_time = interval[0]
                 label = tmp_label

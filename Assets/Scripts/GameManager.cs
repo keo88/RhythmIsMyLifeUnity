@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -11,18 +13,27 @@ public class GameManager : MonoBehaviour
     public AudioSource Track;
     public VideoPlayer Video;
 
+    public string MusicName;
+
     public float Tempo;
-    public Chord[] ChordArray;
+    public List<float> BeatArray;
+    public List<Chord> ChordArray;
+    public Chord CurrentChord;
     public float Speed;
     public bool IsPlaying;
 
+    /// <summary>
+    /// Gamemodes.
+    /// FAKEPLAY : 노트에 hit하면 일시정지.
+    /// PHYTHMGAME : 노트에 hit 해도 PASS.
+    /// </summary>
     public GameMode CurrentGameMode;
 
-    public struct Chord
-    {
-        public float offset;
-        public int pitch;
-    }
+    /// <summary>
+    ///  Music distance는 악보 상의 거리로 4분의 1 노트 하나당 1의 길이를 가진다.
+    ///  Current Music Distance는 주어진 악보에 대해 현재 시점 플레이 중인 악보 상의 position을 나타낸다.
+    /// </summary>
+    public float CurrentMusicDistance;
 
     private bool isGameEnd;
     private bool hasStarted;
@@ -34,6 +45,7 @@ public class GameManager : MonoBehaviour
         hasStarted = false;
         IsPlaying = false;
         isGameEnd = false;
+
         Video.SetDirectAudioVolume(0, 0.5f);
 
         Debug.Log("Game Start!");
@@ -44,7 +56,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // IsPlaying이 true일 때만 게임 플레이에 필요한 작업 활성화
+        // hasStarted이 true일 때만 게임 플레이에 필요한 작업 활성화
         if (hasStarted)
         {
             if (!Video.isPlaying && IsPlaying)
@@ -107,13 +119,20 @@ public class GameManager : MonoBehaviour
          * 게임 플레이를 할 음악을 고르는 단계가 추가될 예정
          */
 
+        string musicNameWithoutExt = MusicName.Replace(".mp3", "").Replace(".wav", "");
+        Track.clip = Resources.Load<AudioClip>($"Music/{musicNameWithoutExt}");
+        Video.clip = Resources.Load<VideoClip>($"Videos/{musicNameWithoutExt}");
+
         // Python Server를 실행하여 해당 라운드에 플레이 되는 곡의 정보(템포, 비트 배열 등)를 받아옴
-        PM.RunPythonServer();
+        Task<bool> pythonProcessingTask = PM.RunPythonServer();
+
+        yield return new WaitUntil(() => pythonProcessingTask.IsCompleted);
 
         // Python Server에서 받아온 정보를 바탕으로 BeatScroller의 Tempo 및 BeatArray 변경
         /*
          * To do BeatScroller 내의 하나의 함수로 통합하기
          */
+
         BS.Tempo = Tempo / 60f;
         BS.ChordArray = ChordArray;
         BS.CreateLanes();
@@ -148,6 +167,7 @@ public class GameManager : MonoBehaviour
                 // 키보드 입력을 하자마자 바로 음악이 재생되는 것을 방지하기 위해 HitBar와 NoteHolder의 초기 위치가 일정 거리 만큼 떨어져 있다.
                 // HitBar와 NoteHolder 사이의 간격이 0이 되면 음악 재생
                 yield return new WaitForSeconds(-HS.transform.position.z * 60.0f / Tempo / Speed);
+
                 //Track.Play();
                 Video.Play();
             }
