@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a10d35478444c778fbb8de51cf54a289731a1aca36427cedad6e9354d39daf65
-size 282
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NoteScript : MonoBehaviour
+{
+    public float Pitch;
+    public float Intensity;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+       
+    }
+}
